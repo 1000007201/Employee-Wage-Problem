@@ -2,8 +2,6 @@
 import random
 
 # Constants
-PRESENT = 1
-ABSENT = 0
 
 attendence = random.randint(0,1)
 
