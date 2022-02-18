@@ -29,12 +29,15 @@ def calculate_total_wage():
     :return: total_wage:monthly wage of an Employee
     '''
     total_wage = 0
+    daily_wage = []
     for i in range(0, WR_DAY_PER_MONTH):
         working_hours = working_hr()
         wage = working_hours * WAGE_PER_HR
+        daily_wage.append(wage)
         total_wage += wage
-    return total_wage
+    return daily_wage,total_wage
 
-
-print(f"{calculate_total_wage()} is Monthly Wage")
+daily , monthly = calculate_total_wage()
+print(f"{daily} is Daily Wage")
+print(f"{monthly} is Monthly Wage")
 
