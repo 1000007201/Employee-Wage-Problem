@@ -30,15 +30,15 @@ def calculate_total_wage():
     :return: total_wage:monthly wage of an Employee
     '''
     total_wage = 0
-    temp_day = WR_DAY_PER_MONTH
+    temp_day = 1
     temp_hr = MAX_WRK_HR
-    daily_wage = []
-    while temp_day > 0 and temp_hr > 0:
+    daily_wage = {}
+    while temp_day <= WR_DAY_PER_MONTH and temp_hr > 0:
         working_hours = working_hr()
         wage = working_hours * WAGE_PER_HR
-        daily_wage.append(wage)
+        daily_wage.__setitem__(temp_day,wage)
         temp_hr -= working_hours
-        temp_day -= 1
+        temp_day += 1
         total_wage += wage
     return daily_wage,total_wage
 
